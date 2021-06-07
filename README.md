@@ -37,6 +37,3 @@ THEN I exit the application, and the HTML is generated
 
 ## Demo
   ![Demo](https://github.com/OrtizAlex/Team-Profile-Generator/blob/main/assets/Demo.gif)  
-
-### Link to Live Page
-https://ortizalex.github.io/Team-Profile-Generator
