@@ -1,4 +1,4 @@
-# Weather Dashboard
+# Team Profile Generator
 
 ## Assignment
 Create a command line interface that uses Inquirer to take user inputted employee information to create a HTML page showing cards of the inputted information. Also create tests using Jest in order to verify the functionality of the employee classes.
