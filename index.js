@@ -1,15 +1,18 @@
 const inquirer = require("inquirer");
+
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+
+const generateHTML = require("./src/generateHTML.js");
+
 const fs = require("fs");
 
 const team = [];
 
-createTeam();
-
 function createTeam(){
+
     inquirer.prompt([
         {
             type: "input",
@@ -33,31 +36,46 @@ function createTeam(){
             type: "list",
             message: "Select the Employee's role: ",
             name: "role",
-            choices: ["Manager", "Engineer", "Intern"]
-    
+            choices: ["Engineer", "Intern"]
         }
     ])
     .then(response => {
-        if(response.role === "Manager")
-            addManager(response.name, response.email, response.id);
-        else if(response.role === "Engineer")
+        if(response.role === "Engineer")
             addEngineer(response.name, response.email, response.id);
         else if(response.role === "Intern")
             addIntern(response.name, response.email, response.id);
-    })
+    });
+    
 }
 
-function addManager(name, email, id){
+function addManager(){
     
     inquirer.prompt([
         {
             type: "input",
+            message: "Enter the Manager's Name: ",
+            name: "name"
+        },
+    
+        {
+            type: "input",
+            message: "Enter the Manager's Email: ",
+            name: "email"
+        },
+    
+        {
+            type: "input",
+            message: "Enter the Manager's ID: ",
+            name: "id"
+        },
+        {
+            type: "input",
             name: "office",
-            message: "Enter the manager's office number"
+            message: "Enter the Manager's office number"
         }
     ])
     .then(response => {
-        const newManager = new Manager(name, email, id, response.office);
+        const newManager = new Manager(response.name, response.email, response.id, response.office);
         team.push(newManager);
         addEmployee();
     })
@@ -105,7 +123,15 @@ function addEmployee(){
         if(response.addEmployee === true){
             createTeam();
         }else{
-            console.log("team", team);
+            writeToFile("./dist/index.html",team);
         }
     })
 }
+
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, generateHTML(data), 
+        (err) => err ? console.error(err) : console.log("\nYour HTML has been created.")
+    );
+}
+
+addManager();

@@ -5,7 +5,7 @@ const Intern = require("../lib/Intern");
 describe("Intern", () => {
   describe("getSchool", () => {
     it("should return school of Intern", () => {
-        const testIntern = new Intern("John Smith", "123", "email@email.com", "school");
+        const testIntern = new Intern("John Smith", "email@email.com", "123", "school");
         const school = "school";
 
         const result = testIntern.getSchool();
@@ -17,7 +17,7 @@ describe("Intern", () => {
 
   describe("getRole", () => {
     it("should return role of Intern", () => {
-        const testIntern = new Intern("John Smith", "123", "email@email.com", "username");
+        const testIntern = new Intern("John Smith", "email@email.com", "123", "username");
         const role = "Intern";
         
         const result = testIntern.getRole();
