@@ -36,4 +36,4 @@ THEN I exit the application, and the HTML is generated
 ![Team Profile Generator Screenshot](./assets/Screenshot.jpeg)
 
 ### Walkthrough Video
-![Walkthrough](https://drive.google.com/file/d/1Hj0J9lWQP7pVdCzGxV5edm4mhffAHC9b/view?usp=sharing)  
+[Link](https://drive.google.com/file/d/1Hj0J9lWQP7pVdCzGxV5edm4mhffAHC9b/view?usp=sharing)
