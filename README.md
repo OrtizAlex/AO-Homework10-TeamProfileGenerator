@@ -32,8 +32,8 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 ```
 
-### Example Output
+### Example Output - Screenshot
 ![Team Profile Generator Screenshot](./assets/Screenshot.jpeg)
 
-## Demo
-  ![Demo](https://github.com/OrtizAlex/Team-Profile-Generator/blob/main/assets/Demo.gif)  
+### Walkthrough Video
+![Walkthrough](https://drive.google.com/file/d/1Hj0J9lWQP7pVdCzGxV5edm4mhffAHC9b/view?usp=sharing)  
